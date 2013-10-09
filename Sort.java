@@ -212,12 +212,11 @@ public class Sort{
         return res;
     }
 
-
-    /*Failure: don't know how to build the buckets arr ......
+    
     public int[] radix(int[] arr){
         int dup[] = this.dup_arr(arr);
 
-        Queue[] buckets = new Queue[10];
+        LinkedList[] buckets = new LinkedList[10];
         for (int i = 0; i < 10; i++){
             buckets[i] = new LinkedList();
         }
@@ -233,9 +232,9 @@ public class Sort{
                 buckets[dup[i] % n].add(dup[i]);
             }
             int j = 0;
-            for (int i = 0; i < 10; i++){ 
+            for (int i = 9; i >= 0; i--){ 
                 while (!buckets[i].isEmpty()){
-                    dup[j++] = buckets[i].getFirst();
+                    dup[j++] = (int)buckets[i].getFirst();
                     buckets[i].removeFirst();
                 }
             }
@@ -244,8 +243,7 @@ public class Sort{
         }
         return dup;
     }
-    */
-
+    
 
     //part of merge sorting: merge two arr together
     public int[] merge(int[] arr1, int[] arr2){
@@ -320,11 +318,9 @@ public class Sort{
         System.out.print("after counting sorting:    ");
         s.print_arr(s.counting(arr));
         
-        //failure: because don't know how to define buckets
-        //System.out.print("after radix sorting:       ");
-        //s.print_arr(s.radix(arr));
+        System.out.print("after radix sorting:       ");
+        s.print_arr(s.radix(arr));
         
-        //failure: because don't know how to define buckets
         //System.out.print("after buckets sorting:       ");
         //s.print_arr(s.buckets(arr));
 
