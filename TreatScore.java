@@ -16,7 +16,7 @@ public class TreatScore {
         return sortedMap;
     }
 
-    public Map<String, Double> sortMap(Map<String, Double> map){
+    public void sortMap(Map<String, Double> map){
         List<Map.Entry<String, Double>> list = new ArrayList<Map.Entry<String, Double>>(map.entrySet());
 
         Collections.sort(list, new Comparator<Map.Entry<String, Double>>() {
@@ -26,14 +26,13 @@ public class TreatScore {
                 return o1.getValue().compareTo(o2.getValue());
             }
         });
-        Map<String, Double> sortedMap = new HashMap<String, Double>();
         Iterator<Map.Entry<String, Double>> iter = list.iterator();
         Map.Entry<String, Double> tmp = null;
         while(iter.hasNext()){
             tmp = iter.next();
-            sortedMap.put(tmp.getKey(), tmp.getValue());
+            System.out.println(tmp.getKey() + " " + tmp.getValue());
         }
-        return sortedMap;
+//        return sortedMap;
     }
 
     public Map<String, Double> readFile(String filename){
@@ -48,7 +47,7 @@ public class TreatScore {
                 BufferedReader bfr = new BufferedReader(bf);
                 String[] sep = null;
                 while((line = bfr.readLine()) != null){
-                    sep = line.split("\t");
+                    sep = line.split(" +");
                     if(sep.length > 0) {
                         name = sep[0];
                     }else{
@@ -66,5 +65,11 @@ public class TreatScore {
             e.printStackTrace();
         }
         return map;
+    }
+
+    public void printMap(Map<String, Double> map){
+        for(String key : map.keySet()){
+            System.out.println(key + "  " + map.get(key));
+        }
     }
 }
