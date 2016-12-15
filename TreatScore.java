@@ -76,7 +76,7 @@ public class TreatScore {
     public static void main(String[] args){
         TreatScore ts = new TreatScore();
         Map<String, Double> map = ts.readFile("nameAndSore.txt");
-        System.out.println("=======oridinary=========");
+        System.out.println("=======oridinary========= ");
         ts.printMap(map);
         Map<String, Double> sortByKey = ts.sortByKey(map);
         System.out.println("========sortByKey========");
