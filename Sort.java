@@ -234,7 +234,7 @@ public class Sort{
             int j = 0;
             for (int i = 9; i >= 0; i--){ 
                 while (!buckets[i].isEmpty()){
-                    dup[j++] = (int)buckets[i].getFirst();
+                    dup[j++] = (Integer)buckets[i].getFirst();
                     buckets[i].removeFirst();
                 }
             }
