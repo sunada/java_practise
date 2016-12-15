@@ -4,6 +4,8 @@ import java.util.*;
 /**
  * Created by manda.sun on 2016/8/30.
  */
+
+//map排序
 public class TreatScore {
     public Map<String, Double> sortByKey(Map<String, Double> map){
         Map<String, Double> sortedMap = new TreeMap<String, Double>(new Comparator<String>() {
